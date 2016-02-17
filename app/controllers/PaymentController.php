@@ -23,7 +23,7 @@ class PaymentController extends BaseController {
   	{
   		$this->data['product'] = 'Aurvana Platinum';
   		$this->data['productImage'] = 'http://img.creative.com/images/products/large/pdt_21734.png.ashx?width=200';
-  		$this->data['price'] = '299.00';
+  		$this->data['price'] = '200.00';
   		$this->data['currency'] = 'USD';
   		$this->data['description'] = 'Flagship Over-the-ear Bluetooth® Headset with NFC';
   		return View::make('hello', $this->data);
@@ -32,8 +32,8 @@ class PaymentController extends BaseController {
   	public function postPayment()
   	{
           	$params = array(
-                		'cancelUrl' 	=> 'http://localhost/cancel_order',
-                		'returnUrl' 	=> 'http://localhost/payment_success',
+                		'cancelUrl' 	=> 'http://localhost:8000/cancel_order',
+                		'returnUrl' 	=> 'http://localhost:8000/payment_success',
                   	'name'		=> Input::get('name'),
                   	'description' 	=> Input::get('description'),
                   	'amount' 	=> Input::get('price'),
